@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React  from 'react';
 import Header from "./components/Header"
 import Card from "./components/Card"
 import Aang from "./images/Aang.jpg"
@@ -30,12 +30,15 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className='card-section'>
       {
         characters.map(item => 
         <Card 
             source={item.image} 
             name={item.name}/>)
       }
+      </div>
+      
     </div>
   );
 }

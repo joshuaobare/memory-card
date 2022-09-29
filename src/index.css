@@ -18,7 +18,11 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(2,.5fr);
+  justify-content: center;
+}
 .scores {
   display: flex;
   flex-direction: column;
