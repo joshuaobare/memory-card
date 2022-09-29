@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import Header from "./components/Header"
 import Card from "./components/Card"
 import Aang from "./images/Aang.jpg"
@@ -11,20 +11,22 @@ import Momo from "./images/Momo.jpg"
 import Sokka from "./images/Sokka.jpg"
 import Toph from "./images/Toph.jpg"
 import Zuko from "./images/Zuko.jpg"
+import uniquid from "uniqid"
 
 function App() {
+
   const characters = [{
-    name:"Aang", image:Aang
-},{ name:"Appa",image:Appa,
-},{ name:"Azula",image:Azula,
-},{ name:"Cabbage",image:Cabbage,
-},{ name:"Iroh",image:Iroh,
-},{ name:"Katara",image:Katara,
-},{ name:"Momo",image:Momo,
-},{ name:"Sokka",image:Sokka,
-},{ name:"Toph",image:Toph,
-},{ name:"Zuko",image:Zuko,
-}]
+      name:"Aang", image:Aang, id:uniquid()
+  },{ name:"Appa", image:Appa, id:uniquid()
+  },{ name:"Azula", image:Azula,id:uniquid()
+  },{ name:"Cabbage", image:Cabbage, id:uniquid()
+  },{ name:"Iroh",image:Iroh, id:uniquid()
+  },{ name:"Katara",image:Katara, id:uniquid()
+  },{ name:"Momo",image:Momo, id:uniquid()
+  },{ name:"Sokka",image:Sokka, id:uniquid()
+  },{ name:"Toph",image:Toph, id:uniquid()
+  },{ name:"Zuko",image:Zuko, id:uniquid()
+  }]
 
 
   return (

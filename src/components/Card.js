@@ -2,9 +2,9 @@ import React from "react"
 
 export default function Card(props) {
     return (
-        <div>
+        <div className="card">
             <img src={props.source} alt="" />
-            <div>{props.name}</div>
+            <div className="card-text">{props.name}</div>
         </div>
     )
 }
