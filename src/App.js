@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import Header from "./components/Header"
 import Card from "./components/Card"
 import Aang from "./images/Aang.jpg"
@@ -14,7 +14,7 @@ import Zuko from "./images/Zuko.jpg"
 import uniquid from "uniqid"
 
 function App() {
-
+   
   const characters = [{
       name:"Aang", image:Aang, id:uniquid()
   },{ name:"Appa", image:Appa, id:uniquid()
@@ -28,13 +28,25 @@ function App() {
   },{ name:"Zuko",image:Zuko, id:uniquid()
   }]
 
+  const shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+
+    return array
+  }
+
+  const [chars , setChars] = useState(shuffleArray(characters))
 
   return (
     <div className="App">
       <Header />
       <div className='card-section'>
       {
-        characters.map(item => 
+        chars.map(item => 
         <Card 
             source={item.image} 
             name={item.name}/>)
