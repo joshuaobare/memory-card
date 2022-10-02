@@ -11,21 +11,21 @@ import Momo from "./images/Momo.jpg"
 import Sokka from "./images/Sokka.jpg"
 import Toph from "./images/Toph.jpg"
 import Zuko from "./images/Zuko.jpg"
-import uniquid from "uniqid"
+import uniqid from "uniqid"
 
 function App() {
    
   const characters = [{
-      name:"Aang", image:Aang, id:uniquid()
-  },{ name:"Appa", image:Appa, id:uniquid()
-  },{ name:"Azula", image:Azula,id:uniquid()
-  },{ name:"Cabbage", image:Cabbage, id:uniquid()
-  },{ name:"Iroh",image:Iroh, id:uniquid()
-  },{ name:"Katara",image:Katara, id:uniquid()
-  },{ name:"Momo",image:Momo, id:uniquid()
-  },{ name:"Sokka",image:Sokka, id:uniquid()
-  },{ name:"Toph",image:Toph, id:uniquid()
-  },{ name:"Zuko",image:Zuko, id:uniquid()
+      name:"Aang", image:Aang, id:uniqid()
+  },{ name:"Appa", image:Appa, id:uniqid()
+  },{ name:"Azula", image:Azula,id:uniqid()
+  },{ name:"Cabbage", image:Cabbage, id:uniqid()
+  },{ name:"Iroh",image:Iroh, id:uniqid()
+  },{ name:"Katara",image:Katara, id:uniqid()
+  },{ name:"Momo",image:Momo, id:uniqid()
+  },{ name:"Sokka",image:Sokka, id:uniqid()
+  },{ name:"Toph",image:Toph, id:uniqid()
+  },{ name:"Zuko",image:Zuko, id:uniqid()
   }]
 
   const shuffleArray = array => {
@@ -43,7 +43,7 @@ function App() {
 
   function handleClick() {
       setChars(() => shuffleArray(characters))
-      console.log("Click")
+      
   }
 
   return (
@@ -53,6 +53,7 @@ function App() {
       {
         chars.map(item => 
         <Card 
+            key = {uniqid()}
             source={item.image}
             handleClick = {handleClick} 
             name={item.name}
