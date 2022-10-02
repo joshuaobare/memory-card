@@ -39,7 +39,12 @@ function App() {
     return array
   }
 
-  const [chars , setChars] = useState(shuffleArray(characters))
+  const [chars , setChars] = useState(characters)
+
+  function handleClick() {
+      setChars(() => shuffleArray(characters))
+      console.log("Click")
+  }
 
   return (
     <div className="App">
@@ -48,8 +53,10 @@ function App() {
       {
         chars.map(item => 
         <Card 
-            source={item.image} 
-            name={item.name}/>)
+            source={item.image}
+            handleClick = {handleClick} 
+            name={item.name}
+        />)
       }
       </div>
       
