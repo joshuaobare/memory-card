@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState , useEffect} from 'react';
 import Header from "./components/Header"
 import Card from "./components/Card"
 import Aang from "./images/Aang.jpg"
@@ -19,7 +19,7 @@ function App() {
       name:"Aang", image:Aang, id:uniqid()
   },{ name:"Appa", image:Appa, id:uniqid()
   },{ name:"Azula", image:Azula,id:uniqid()
-  },{ name:"Cabbage", image:Cabbage, id:uniqid()
+  },{ name:"Cabbage Merchant", image:Cabbage, id:uniqid()
   },{ name:"Iroh",image:Iroh, id:uniqid()
   },{ name:"Katara",image:Katara, id:uniqid()
   },{ name:"Momo",image:Momo, id:uniqid()
@@ -27,6 +27,8 @@ function App() {
   },{ name:"Toph",image:Toph, id:uniqid()
   },{ name:"Zuko",image:Zuko, id:uniqid()
   }]
+
+ 
 
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -41,10 +43,18 @@ function App() {
 
   const [chars , setChars] = useState(characters)
 
+  useEffect(() => {},[chars])
+
   function handleClick() {
-      setChars(() => shuffleArray(characters))
+      setChars(prevState => {
+        return [...shuffleArray(prevState)]
+      })
       
   }
+
+  
+
+  
 
   return (
     <div className="App">
@@ -52,12 +62,12 @@ function App() {
       <div className='card-section'>
       {
         chars.map(item => 
-        <Card 
-            key = {uniqid()}
-            source={item.image}
-            handleClick = {handleClick} 
-            name={item.name}
-        />)
+          <Card 
+              key = {uniqid()}
+              source={item.image}
+              handleClick = {handleClick} 
+              name={item.name}
+          />)
       }
       </div>
       
