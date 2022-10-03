@@ -17,6 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 10px;
 }
 .card-section {
   display: grid;
@@ -31,10 +32,12 @@ header {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .scores {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 .card-text {
   text-align: center;
@@ -42,4 +45,5 @@ header {
 
 .title {
   justify-content: center;
+  flex:2;
 }

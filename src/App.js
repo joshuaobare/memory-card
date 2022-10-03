@@ -72,16 +72,8 @@ function App() {
       setScore(0)
       setClick([])
     }
-    
-    
-
-    console.log(click , check)
+        
     }
-
-  
-  
-
-  
 
   return (
     <div className="App">
