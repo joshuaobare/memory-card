@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.df689964.css",
+    "main.js": "/cv-project/static/js/main.e977d78f.js",
+    "static/media/Momo.jpg": "/cv-project/static/media/Momo.4c301f5d9bf4bd7597f6.jpg",
+    "static/media/Cabbagemerchant.jpg": "/cv-project/static/media/Cabbagemerchant.71e174f8a38dd338c248.jpg",
+    "static/media/Sokka.jpg": "/cv-project/static/media/Sokka.039abe93e5a4e922f3d2.jpg",
+    "static/media/Aang.jpg": "/cv-project/static/media/Aang.807c0ac60c99cc00e161.jpg",
+    "static/media/Azula.jpg": "/cv-project/static/media/Azula.d236878f6226d7d83105.jpg",
+    "static/media/Appa.jpg": "/cv-project/static/media/Appa.eba37757a8df130d0d53.jpg",
+    "static/media/Iroh.jpg": "/cv-project/static/media/Iroh.db4501cccfa78701e3a3.jpg",
+    "static/media/Toph.jpg": "/cv-project/static/media/Toph.9f2c838f053800fb88a3.jpg",
+    "static/media/Katara.jpg": "/cv-project/static/media/Katara.a60d0771d5d4ab2db1a9.jpg",
+    "static/media/Zuko.jpg": "/cv-project/static/media/Zuko.1fdff64329c38b809ded.jpg",
+    "index.html": "/cv-project/index.html",
+    "main.df689964.css.map": "/cv-project/static/css/main.df689964.css.map",
+    "main.e977d78f.js.map": "/cv-project/static/js/main.e977d78f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df689964.css",
+    "static/js/main.e977d78f.js"
+  ]
+}
