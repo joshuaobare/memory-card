@@ -5,7 +5,7 @@ const Header = (props) => {
                 <h1 className="title">Memory Card</h1>
                 <div className="scores">
                     <span>Score: {props.score}</span>
-                    <span>Best Score:{props.bestScore}</span>
+                    <span>Best Score: {props.bestScore}</span>
                 </div>
             </header>
         </div>

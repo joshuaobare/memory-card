@@ -64,7 +64,11 @@ function App() {
     if(!check) {
       setScore(prevState => prevState + 1)
     }else {
-      setBestScore(score)
+      setBestScore(prevScore => {
+        if (prevScore > score) {
+          return prevScore
+        } else return score
+      })
       setScore(0)
       setClick([])
     }
