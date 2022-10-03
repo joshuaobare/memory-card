@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from 'react';
+import React , {useState } from 'react';
 import Header from "./components/Header"
 import Card from "./components/Card"
 import Aang from "./images/Aang.jpg"
@@ -27,8 +27,8 @@ function App() {
   },{ name:"Toph",image:Toph, id:uniqid()
   },{ name:"Zuko",image:Zuko, id:uniqid()
   }]
-
  
+  const [click , setClick] = useState([])
 
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -42,30 +42,50 @@ function App() {
   }
 
   const [chars , setChars] = useState(characters)
+  const [score , setScore] = useState(0)
 
-  useEffect(() => {},[chars])
+  //useEffect(() => {},[click])
 
-  function handleClick() {
-      setChars(prevState => {
-        return [...shuffleArray(prevState)]
-      })
+  function handleClick(id) {
+    setChars(prevState => {
+      return [...shuffleArray(prevState)]
+    })
+    
+    
+    setClick(prevState => [...prevState,id])     
       
   }
 
+  function checker(id){    
+    const check = click.some(item => {
+      return item === id})
+  
+    if(!check) {
+      setScore(prevState => prevState + 1)
+    }else {
+      setScore(0)
+      setClick([])
+    }        
+    console.log(click , check)
+    }
+
+  
   
 
   
 
   return (
     <div className="App">
-      <Header />
+      <Header score = {score}/>
       <div className='card-section'>
       {
         chars.map(item => 
           <Card 
-              key = {uniqid()}
+              key = {item.id}
               source={item.image}
-              handleClick = {handleClick} 
+              handleClick = {() => {
+                handleClick(item.id)
+                checker(item.id)}} 
               name={item.name}
           />)
       }
