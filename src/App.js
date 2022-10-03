@@ -43,6 +43,7 @@ function App() {
 
   const [chars , setChars] = useState(characters)
   const [score , setScore] = useState(0)
+  const [bestScore, setBestScore] = useState(score)
 
   //useEffect(() => {},[click])
 
@@ -63,9 +64,13 @@ function App() {
     if(!check) {
       setScore(prevState => prevState + 1)
     }else {
+      setBestScore(score)
       setScore(0)
       setClick([])
-    }        
+    }
+    
+    
+
     console.log(click , check)
     }
 
@@ -76,7 +81,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header score = {score}/>
+      <Header 
+        score = {score}
+        bestScore = {bestScore}
+      />
       <div className='card-section'>
       {
         chars.map(item => 
