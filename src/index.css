@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #a10000;
 }
 
 code {
@@ -40,20 +41,27 @@ header {
 }
 
 .char-img{
-  border: 2px black solid;
+  border: 2px #ecb100 solid;
 }
 .scores {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  font-weight: 600;
+  color: #ecb100;
+
 }
 .card-text {
   text-align: center;
+  color: #ecb100;
+  font-weight: 900;
+
 }
 
 .title {
   justify-content: center;
   flex:2;
+  color:	#ecb100;
 }
 
 .game-end {
