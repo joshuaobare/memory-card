@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     if(score === 10){
       setGameEnd(true)
+      setBestScore(10)
     }
   },[score])
 
