@@ -1,16 +1,19 @@
 import React , {useEffect, useState } from 'react';
 import Header from "./components/Header"
 import Card from "./components/Card"
+import EndGame from './components/EndGame';
 import { characters } from './characters';
+import Confetti from 'react-confetti';
 
 
 function App() {
-   
+  
   const [click , setClick] = useState([]) 
   const [chars , setChars] = useState(characters)
   const [score , setScore] = useState(0)
   const [bestScore, setBestScore] = useState(score)
-  const [gameEnd , setGameEnd] = useState(false) 
+  const [gameEnd , setGameEnd] = useState(false)
+  const [dialogOpen , setDialogOpen] = useState(false) 
   
   useEffect(() => {
     if(score === 10){
@@ -20,7 +23,7 @@ function App() {
 
   useEffect(() => {
     if(gameEnd){
-      
+      setDialogOpen(true)
     }
   },[gameEnd])
 
@@ -33,6 +36,11 @@ function App() {
     }
 
     return array
+  }
+
+  function dialogToggle(){
+    setDialogOpen(false)
+    setGameEnd(false)
   }
   
   function handleClick(id) {
@@ -65,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+      {gameEnd && <Confetti /> }
       <Header 
         score = {score}
         bestScore = {bestScore}
@@ -82,7 +91,13 @@ function App() {
           />)
       }
       </div>
+      {gameEnd ? 
+        <EndGame 
+          dialogOpen = {dialogOpen}
+          dialogToggle = {dialogToggle}
+        />
       
+      : ""}
     </div>
   );
 }
