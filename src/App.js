@@ -14,6 +14,14 @@ function App() {
   const [bestScore, setBestScore] = useState(score)
   const [gameEnd , setGameEnd] = useState(false)
   const [dialogOpen , setDialogOpen] = useState(false) 
+
+  useEffect(() => {
+    const bestScores = JSON.parse(localStorage.getItem("bestScore"))
+    if (bestScores){
+      setBestScore(bestScores)
+    } 
+    
+  },[])
   
   useEffect(() => {
     if(score === 10){
@@ -26,6 +34,10 @@ function App() {
       setDialogOpen(true)
     }
   },[gameEnd])
+
+  useEffect(() => {
+    localStorage.setItem("bestScore", JSON.stringify(bestScore))
+  },[bestScore])
 
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -41,6 +53,7 @@ function App() {
   function dialogToggle(){
     setDialogOpen(false)
     setGameEnd(false)
+    setScore(0)
   }
   
   function handleClick(id) {
